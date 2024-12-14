@@ -52,8 +52,8 @@ const Parallex = ({ type }) => {
       ></motion.div>
       <div></div>
       <motion.div className="stars" variants={variantsSlider} animate="animate">
-        <img src="/public/stars.png" alt="Star 1" />
-        <img src="/public/stars.png" alt="Star 2" />
+        <img src="/stars.png" alt="Star 1" />
+        <img src="/stars.png" alt="Star 2" />
       </motion.div>
     </div>
   );
