@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./services.scss";
-import { motion } from "framer-motion";
+import { color, motion, useInView } from "framer-motion";
 
+const varaintService = {
+  initial: {
+    y: -200, // Adjusted to a more reasonable value
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 3,
+      staggerChildren: 0.2,
+    },
+  },
+};
 const Services = () => {
+  const textContainerRef = useRef();
+  const isTextContainerInView = useInView(textContainerRef, {
+    margin: "-100px",
+  });
+
   return (
-    <motion.div className="services">
-      <motion.div className="textContainer">
+    <motion.div
+      className="services"
+      variants={varaintService}
+      ref={textContainerRef}
+      initial="initial"
+      // animate="animate"
+      animate={isTextContainerInView && "animate"}
+    >
+      <motion.div className="textContainer" variants={varaintService}>
         <p>
           We Focus On Helping Your Brand Grow
           <br />
@@ -13,16 +39,17 @@ const Services = () => {
         </p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer">
+      <motion.div className="titleContainer" variants={varaintService}>
         <div className="title">
           <img src="/people.webp" alt="Title" />
           <h1>
-            <b>Unique</b> Ideas
+            <motion.b whileHover={{ color: "purple" }}>Unique</motion.b> Ideas
           </h1>
         </div>
         <div className="title">
           <h1>
-            <b>For Your </b> Business
+            For Your{" "}
+            <motion.b whileHover={{ color: "orange" }}>Business</motion.b>
           </h1>
           <button>WHAT WE DO</button>
         </div>
@@ -34,11 +61,14 @@ const Services = () => {
 
 const ServicesSections = () => {
   return (
-    <div className="w-full h-full overflow-auto mt-5">
+    <motion.div
+      className="listContainer w-full h-full overflow-auto mt-5"
+      variants={varaintService}
+    >
       <div className="w-full flex flex-col md:flex-row justify-center items-center space-y-5 md:space-y-0 space-x-0 md:space-x-5 px-5 md:px-20">
-        {/** Card 1 */}
-        <div className="w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
-          <div className="bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
+        {/* Card 1 */}
+        <div className="card w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
+          <div className="icon-container bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -65,8 +95,9 @@ const ServicesSections = () => {
             strategies, and accelerate growth—all from one intuitive interface.
           </p>
         </div>
-        <div className="w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
-          <div className="bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
+        {/* Card 2 */}
+        <div className="card w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
+          <div className="icon-container bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -93,8 +124,9 @@ const ServicesSections = () => {
             strategies, and accelerate growth—all from one intuitive interface.
           </p>
         </div>
-        <div className="w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
-          <div className="bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
+        {/* Card 3 */}
+        <div className="card w-full flex flex-col justify-start items-start p-10 min-h-[320px] rounded-md bg-gradient-to-br from-white/20 to-white/[0.05] border border-neutral-500 backdrop-blur-xl">
+          <div className="icon-container bg-gradient-to-br from-ziverium-blue to-ziverium-blue/30 p-3 rounded-full border-2 border-neutral-500 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -124,7 +156,7 @@ const ServicesSections = () => {
 
         {/** Add additional cards here */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

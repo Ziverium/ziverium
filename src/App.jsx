@@ -3,6 +3,8 @@ import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
 import Parallex from "./components/parallex/Parallex";
 import Services from "./components/services/Services";
+import Portfolio from "./components/portfolio/Portfolio";
+import Contact from "./components/contact/Contact";
 import Test from "./Test";
 import "./index.css"; // Or './tailwind.css' based on your file name
 
@@ -22,10 +24,11 @@ const App = () => {
       <section id="Portfolio">
         <Parallex type="portfolio" />
       </section>
-      <section>Portfolio1</section>
-      <section>Portfolio2</section>
-      <section>Portfolio3</section>
-      <section id="Contact">Contact</section>
+      <Portfolio />
+      <section id="Contact">
+        {" "}
+        <Contact />
+      </section>
       <section>About</section>
     </div>
   );

@@ -14,7 +14,7 @@ const variantsSidebar = {
     },
   },
   closed: {
-    clipPath: "circle(30px at 50px 50px)",
+    clipPath: "circle(30px at 36px 50px)",
     transition: {
       duration: 2,
       type: "smooth",
