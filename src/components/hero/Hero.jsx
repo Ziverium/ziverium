@@ -1,5 +1,6 @@
 import React from "react";
 import "./hero.scss";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 const variantsText = {
   initial: {
@@ -38,6 +39,30 @@ const variantsSlider = {
   },
 };
 
+const variantsLink = {
+  open: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+  closed: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+};
+const itemVariantsItem = {
+  open: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  },
+};
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -51,10 +76,23 @@ const Hero = () => {
           <motion.h2 variants={variantsText}>The Nexus</motion.h2>
           <motion.h1 variants={variantsText}>Your One Stop Solution</motion.h1>
           <motion.div className="buttons" variants={variantsText}>
-            <motion.button variants={variantsText}>
-              See Latest Work
-            </motion.button>
-            <motion.button variants={variantsText}>Contact Us</motion.button>
+            <Link
+              to="Portfolio" // ID of the target section
+              smooth={true} // Smooth scrolling
+              duration={2000} // Scroll duration in milliseconds
+            >
+              {" "}
+              <motion.button variants={variantsText}>
+                See Latest Work
+              </motion.button>
+            </Link>
+            <Link
+              to="Contact" // ID of the target section
+              smooth={true} // Smooth scrolling
+              duration={2000} // Scroll duration in milliseconds
+            >
+              <motion.button variants={variantsText}>Contact Us</motion.button>
+            </Link>
           </motion.div>
           <motion.img
             variants={variantsText}

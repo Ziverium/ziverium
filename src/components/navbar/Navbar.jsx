@@ -7,7 +7,7 @@ const Navbar = () => {
     hidden: { opacoty: 0, scale: 0.4 },
     visible: {
       opacity: 1,
-      scale: 1.2,
+      scale: 1.8,
       transition: { delay: 0.5, duration: 1 },
     },
   };

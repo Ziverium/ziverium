@@ -26,10 +26,8 @@ const App = () => {
       </section>
       <Portfolio />
       <section id="Contact">
-        {" "}
         <Contact />
       </section>
-      <section>About</section>
     </div>
   );
 };

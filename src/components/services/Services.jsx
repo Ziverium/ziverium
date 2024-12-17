@@ -48,10 +48,10 @@ const Services = () => {
         </div>
         <div className="title">
           <h1>
-            For Your{" "}
-            <motion.b whileHover={{ color: "orange" }}>Business</motion.b>
+            For Your
+            <motion.b whileHover={{ color: "orange" }}> Business</motion.b>
           </h1>
-          <button>WHAT WE DO</button>
+          <button style={{ pointerEvents: "none" }}>WHAT WE DO</button>
         </div>
       </motion.div>
       <ServicesSections />
