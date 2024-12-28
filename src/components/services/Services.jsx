@@ -4,7 +4,7 @@ import { color, motion, useInView } from "framer-motion";
 
 const varaintService = {
   initial: {
-    y: -200, // Adjusted to a more reasonable value
+    y: 200, // Adjusted to a more reasonable value
     opacity: 0,
   },
   animate: {

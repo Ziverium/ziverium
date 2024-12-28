@@ -43,7 +43,7 @@
       }
 
       .buttons {
-        z-index: 200; // Ensure it's above the slider
+        z-index: 2; // Ensure it's above the slider
         button {
           padding: 20px;
           border: 1px solid white;

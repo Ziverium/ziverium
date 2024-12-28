@@ -4,15 +4,15 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  color: black;
-  z-index: 13;
+  color: wheat;
+  z-index: 4;
   .bg {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 400px;
-    background: white;
+    background: gray;
 
     .links {
       position: absolute;

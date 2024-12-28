@@ -81,7 +81,6 @@ const Hero = () => {
               smooth={true} // Smooth scrolling
               duration={2000} // Scroll duration in milliseconds
             >
-              {" "}
               <motion.button variants={variantsText}>
                 See Latest Work
               </motion.button>
