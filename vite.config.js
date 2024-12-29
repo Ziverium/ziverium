@@ -4,6 +4,10 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 5000, // Replace with the desired port number
+    host: "0.0.0.0", // Ensure the server is accessible externally
+  },
   css: {
     preprocessorOptions: {
       sass: {
